@@ -18,11 +18,13 @@ dependencies = [
     "notebook",
     "defiant",
     "holodeck-gw",
+    "jug-timing",
 ]
 
 [tool.uv.sources]
 defiant = { git = "https://github.com/GersbachKa/defiant" }
 holodeck = { git = "https://github.com/nanograv/holodeck", branch = "dev" }
+jug-timing = { git = "https://github.com/MattTMiles/jug.git", branch = "test_dep" }
 
 [tool.hatch.build.targets.wheel]
 packages = []
