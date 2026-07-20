@@ -3,16 +3,10 @@ requires = ["hatchling>=1.25"]
 build-backend = "hatchling.build"
 
 [project]
-name = "viper-summer-school-2026"
-version = "2026.0.0"
-description = "Educational material for the 2026 VIPER Summer School on PTA GW Astrophysics."
-readme = "README.md"
-requires-python = ">=3.9,<3.12"
-license = {text = "MIT"}
-
-authors = [
-    {name = "VIPER Summer School Team"}
-]
+name = "viper-env"
+version = "0.0.1"
+description = "Environment for the 2026 VIPER Summer School"
+requires-python = ">=3.10"
 
 dependencies = [
     "enterprise-pulsar",
@@ -22,29 +16,16 @@ dependencies = [
     "jupyterlab",
     "ipykernel",
     "notebook",
-    "defiant @ git+https://github.com/GersbachKa/defiant.git",
-    "holodeck" @ git+https://github.com/nanograv/holodeck.git
+    "defiant",
+    "holodeck-gw",
 ]
-
-[project.optional-dependencies]
-
-dev = [
-    "ruff",
-    "pytest",
-]
-
-docs = [
-    "jupyterlab",
-]
-
-[tool.uv]
 
 [tool.uv.sources]
-
 defiant = { git = "https://github.com/GersbachKa/defiant" }
+holodeck = { git = "https://github.com/nanograv/holodeck", branch = "dev" }
 
-[tool.ruff]
-line-length = 88
+[tool.hatch.build.targets.wheel]
+packages = []
 
-[tool.ruff.lint]
-select = ["E", "F", "I"]
+[tool.uv]
+package = false
